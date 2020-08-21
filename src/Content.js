@@ -25,11 +25,11 @@ class Content extends Component {
     return (
       <div className="Content">
         {this.state.data.map(list => <li>
-        BOOK: {list.book_name}
+         BOOK: {list.book_name}
          AUTHOR: {list.author} 
          PRICE: {list.price}$ 
          STOCK: {list.stock}
-          <img src="http://localhost:3000/public/images/${list.reference_number}"></img>
+          <img src={`http://localhost:3000/public/images/${list.reference_number}.jpg`}></img>
          </li>)}
 
 
