@@ -1,0 +1,18 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; 
+    background-color: gray; 
+    margin-bottom: 6px;
+    font-size: large;
+    color: white;
+      
+}
+
+.cart-signin{
+    display: flex;
+    align-self: center;
+    
+}
+
