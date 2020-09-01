@@ -7,10 +7,14 @@ function Header() {
             <div>
                 Book Store
             </div>
-            <div className='cart-signin'>
-                <a href=''>Cart</a>
-                <a href=''>Sign In</a>
-            </div>
+            <form >
+                <input type="text" placeholder="Search.."/>
+                <button type="submit"><i className="fa fa-search"></i>Go</button>
+            </form>
+                <div className='cart-signin'>
+                    <a href=''>Cart</a>
+                    <a href=''>Sign In</a>
+                </div>
         </div>
     )
 }

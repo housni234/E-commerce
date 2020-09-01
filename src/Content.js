@@ -2,37 +2,39 @@ import React, { Component } from 'react';
 import './content.css';
 
 class Content extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
-        data: []
+    this.state = {
+      data: []
     }
   }
- 
 
-  componentDidMount(){
+
+  componentDidMount() {
     fetch('http://localhost:5000/books')
-    .then((response) => response.json())
-    .then((responseJson) => {
-        this.setState({ data : responseJson })
-    })
-    .catch((error) => {
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({ data: responseJson })
+      })
+      .catch((error) => {
         console.error(error);
-    });
+      });
 
   }
   render() {
     return (
       <div className="Content">
-        {this.state.data.map(list => <li>
-         BOOK: {list.book_name}
-         AUTHOR: {list.author} 
-         PRICE: {list.price}$ 
-         STOCK: {list.stock}
-          <img src={`http://localhost:3000/public/images/${list.reference_number}.jpg`}></img>
-         </li>)}
-
-
+        <div className="products">
+          {this.state.data.map(list => <li key={list}>
+            <img src={`http://localhost:3000/public/images/${list.reference_number}.jpg`}></img>
+            <div> {list.book_name}</div>
+            <div> {list.author}</div>
+            <div>{list.price}$</div>
+            <div>Stock {list.stock}</div>
+            <button>Buy</button>
+            <button>Add to cart</button>
+          </li>)}
+        </div>
       </div>
     );
   }

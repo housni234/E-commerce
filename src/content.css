@@ -1,3 +1,11 @@
-.content{
-flex-wrap: wrap;
+.products{
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
+.products li{
+    list-style-type: none;
+    flex:0 1 34rem;
+}
+
